@@ -32,10 +32,10 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
 webpackConfig.plugins = [...webpackConfig.plugins,
   new HtmlWebpackPlugin({
     inject: true,
-    template: helpers.root('/src/index.html'),
+    template: helpers.root('/public/index.html'),
     favicon: helpers.root('/static/favicon.ico')
   }),
-    new DefinePlugin({
+  new DefinePlugin({
    'process.env': env
   })
 ];

@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --hot --inline",
-    "build": "cross-env NODE_ENV=production yarn run clean && yarn run test && yarn run compile",
+    "build": "cross-env NODE_ENV=production yarn run clean && yarn run compile",
     "clean": "rimraf public",
     "compile": "webpack"
   },
@@ -21,6 +21,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "copy-webpack-plugin": "^4.2.0",
+    "cross-env": "^5.1.1",
     "cssnano": "^3.10.0",
     "eslint": "^4.11.0",
     "eslint-loader": "^1.9.0",
