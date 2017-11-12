@@ -3,11 +3,11 @@ const helpers = require('./helpers'),
 
 let config = {
   entry: {
-    'main': helpers.root('/src/js/main.js')
+    'main': helpers.root('/src/_assets/js/main.js')
   },
   output: {
     path: helpers.root('/public'),
-    filename: 'js/[name].[hash].js'
+    filename: '_assets/js/[name].[hash].js'
   },
   devtool: 'source-map',
   resolve: {

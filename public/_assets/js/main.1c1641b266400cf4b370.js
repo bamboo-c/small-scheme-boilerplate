@@ -107,4 +107,4 @@ function taxCalculator(price ,tax) {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.cbe0424a029861e52b88.js.map
+//# sourceMappingURL=main.1c1641b266400cf4b370.js.map
