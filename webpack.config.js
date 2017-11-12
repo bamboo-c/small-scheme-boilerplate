@@ -22,7 +22,29 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'eslint-loader',
-    }],
+    },
+    {
+      test: /\.css$/,
+      loader: [
+        'css-loader', 'postcss-loader'
+      ]
+    },
+    {
+      test: /\.pug$/,
+      loader: 'pug-loader'
+    },
+    {
+      test: /\.(woff2?|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'url-loader?limit=10000'
+    },
+    {
+      test: /\.(ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file-loader'
+    },
+    {
+      test: /\.(jpg|png)$/,
+      loader: 'url-loader'
+    }]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
