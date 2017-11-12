@@ -3,7 +3,7 @@ const helpers = require('./helpers'),
 
 let config = {
   entry: {
-    'main': helpers.root('/src/main.js')
+    'main': helpers.root('/src/js/main.js')
   },
   output: {
     path: helpers.root('/public'),
