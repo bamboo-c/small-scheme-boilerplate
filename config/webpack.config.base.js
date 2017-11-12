@@ -3,7 +3,7 @@ const helpers = require('./helpers'),
 
 let config = {
   entry: {
-    'index': helpers.root('/src/_assets/js/main.js')
+    'main': helpers.root('/src/_assets/js/main.js')
   },
   output: {
     path: helpers.root('/public'),
@@ -20,7 +20,9 @@ let config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query:{
-          presets: ['es2015']
+          presets: [
+            ['env', {'modules': false}]
+          ]
         }
       },
       {

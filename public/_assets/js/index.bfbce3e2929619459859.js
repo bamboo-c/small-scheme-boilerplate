@@ -65,10 +65,43 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: Error: Couldn't find preset \"es2015\" relative to directory \"/Users/komei/Desktop/_project/small-scheme-boilerplate/src/_assets/js\"\n    at /Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-core/lib/transformation/file/options/option-manager.js:293:19\n    at Array.map (<anonymous>)\n    at OptionManager.resolvePresets (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-core/lib/transformation/file/options/option-manager.js:275:20)\n    at OptionManager.mergePresets (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-core/lib/transformation/file/options/option-manager.js:264:10)\n    at OptionManager.mergeOptions (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-core/lib/transformation/file/options/option-manager.js:249:14)\n    at OptionManager.init (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)\n    at File.initOptions (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-core/lib/transformation/file/index.js:212:65)\n    at new File (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-core/lib/transformation/file/index.js:135:24)\n    at Pipeline.transform (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-core/lib/transformation/pipeline.js:46:16)\n    at transpile (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-loader/lib/index.js:50:20)\n    at Object.module.exports (/Users/komei/Desktop/_project/small-scheme-boilerplate/node_modules/babel-loader/lib/index.js:175:20)");
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_addition_calculator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_tax_calculator__ = __webpack_require__(2);
+
+
+
+var item1Price = 400;
+var item2Price = 600;
+var totalPrice = Object(__WEBPACK_IMPORTED_MODULE_0__modules_addition_calculator__["a" /* default */])(item1Price, item2Price);
+var tax = 1.08;
+var priceIncludeTax = Object(__WEBPACK_IMPORTED_MODULE_1__modules_tax_calculator__["a" /* default */])(totalPrice, tax);
+
+console.log(priceIncludeTax);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = additionCalculator;
+function additionCalculator(number1, number2) {
+  return number1 + number2;
+}
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = taxCalculator;
+function taxCalculator(price, tax) {
+  return Math.round(price * tax);
+}
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=index.d11b158878e1434b16df.js.map
+//# sourceMappingURL=index.bfbce3e2929619459859.js.map
