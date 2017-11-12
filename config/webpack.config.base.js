@@ -1,9 +1,9 @@
 const helpers = require('./helpers'),
-  CopyWebpackPlugin = require('copy-webpack-plugin');
+  HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = {
   entry: {
-    'main': helpers.root('/src/_assets/js/main.js')
+    'index': helpers.root('/src/_assets/js/main.js')
   },
   output: {
     path: helpers.root('/public'),
@@ -11,10 +11,18 @@ let config = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.html', 'pug'],
+    extensions: ['.js', '.html', '.pug'],
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query:{
+          presets: ['es2015']
+        }
+      },
       {
         test: /\.pug$/,
         loader: 'pug-loader'
@@ -26,6 +34,14 @@ let config = {
       }
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: helpers.root('src/index.pug'),
+      filename: 'index.html',
+      inject: 'body',
+      chunks: ['index']
+    }),
+  ]
 };
 
 module.exports = config;

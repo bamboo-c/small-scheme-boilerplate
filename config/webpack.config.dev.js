@@ -29,7 +29,7 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
   }
 ];
 
-webpackConfig.plugins = [
+webpackConfig.plugins = [...webpackConfig.plugins,
   new HtmlWebpackPlugin({
     inject: true,
     template: helpers.root('/public/index.html'),
