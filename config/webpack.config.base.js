@@ -3,30 +3,21 @@ const helpers = require('./helpers'),
 
 let config = {
   entry: {
-    'main': helpers.root('/src/main.ts')
+    'main': helpers.root('/src/main.js')
   },
   output: {
-    path: helpers.root('/dist'),
+    path: helpers.root('/public'),
     filename: 'js/[name].[hash].js'
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.ts', '.js', '.html'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-    }
+    extensions: ['.js', '.html', 'pug'],
   },
   module: {
-    rules: [{
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        loader: 'tslint-loader'
-      },
+    rules: [
       {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: 'awesome-typescript-loader'
+        test: /\.pug$/,
+        loader: 'pug-loader'
       },
       {
         test: /\.html$/,
