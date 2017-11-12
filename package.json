@@ -5,6 +5,16 @@
   "repository": "git@github.com:bamboo-c/small-scheme-boilerplate.git",
   "author": "komei otake <komei1220@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=6",
+    "npm": "3"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --hot --inline",
+    "build": "cross-env NODE_ENV=production yarn run clean && yarn run test && yarn run compile",
+    "clean": "rimraf public",
+    "compile": "webpack"
+  },
   "dependencies": {
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
