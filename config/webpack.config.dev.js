@@ -32,7 +32,7 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
     inject: true,
-    template: helpers.root('/src/app.vue'),
+    template: helpers.root('/src/App.vue'),
     favicon: helpers.root('/static/favicon.ico')
   }),
   new DefinePlugin({

@@ -6,7 +6,7 @@ let config = {
   },
   output: {
     path: helpers.root('/public'),
-    filename: '_assets/js/[name].[hash].js'
+    filename: 'assets/js/[name].[hash].js'
   },
   devtool: 'source-map',
   resolve: {
@@ -34,6 +34,12 @@ let config = {
         exclude: ['./public/index.html']
       }
     ],
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/public/vue.esm.js'
+    },
+    extensions: ['*', '.js', '.vue', '.json']
   },
 };
 
