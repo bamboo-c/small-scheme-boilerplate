@@ -12,8 +12,8 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
     ]
   },
   {
-    test: /\.pug$/,
-    loader: 'pug-loader'
+    test: /\.vue$/,
+    loader: 'vue-loader'
   },
   {
     test: /\.(woff2?|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -29,10 +29,10 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
   }
 ];
 
-webpackConfig.plugins = [...webpackConfig.plugins,
+webpackConfig.plugins = [
   new HtmlWebpackPlugin({
     inject: true,
-    template: helpers.root('/public/index.html'),
+    template: helpers.root('/src/app.vue'),
     favicon: helpers.root('/static/favicon.ico')
   }),
   new DefinePlugin({

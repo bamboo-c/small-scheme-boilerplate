@@ -1,5 +1,4 @@
-const helpers = require('./helpers'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+const helpers = require('./helpers');
 
 let config = {
   entry: {
@@ -11,7 +10,7 @@ let config = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.html', '.pug'],
+    extensions: ['.js', '.html', '.vue'],
   },
   module: {
     rules: [
@@ -26,8 +25,8 @@ let config = {
         }
       },
       {
-        test: /\.pug$/,
-        loader: 'pug-loader'
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       {
         test: /\.html$/,
@@ -36,14 +35,6 @@ let config = {
       }
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: helpers.root('src/index.pug'),
-      filename: 'index.html',
-      inject: 'body',
-      chunks: ['index']
-    }),
-  ]
 };
 
 module.exports = config;
