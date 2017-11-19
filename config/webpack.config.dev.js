@@ -51,5 +51,5 @@ webpackConfig.devServer = {
   contentBase: './src',
     open: true
   };
-  
-  module.exports = webpackConfig;
+
+module.exports = webpackConfig;
