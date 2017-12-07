@@ -1,16 +1,34 @@
-<template lang="pug">
-  div#app
-    h1 {{ msg }}
-    h2 Essential Links
-    ul
-      li: a(href="#" target="_blank") Core Docs
-      li: a(href="#" target="_blank") Forum
-      li: a(href="#" target="_blank") Gitter Chat
-      li: a(href="#" target="_blank") Twitter
-    h2 Ecosystem
-    ul
-      li: a(ref="#" target="_blank") vue-router
-      li: a(ref="#" target="_blank") vuex
-      li: a(ref="#" target="_blank") vue-loader
-      li: a(ref="#" target="_blank") awesome-vue
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    {{#router}}
+    <router-view/>
+    {{else}}
+    <HelloWorld/>
+    {{/router}}
+  </div>
 </template>
+
+<script>
+{{#unless router}}
+import HelloWorld from './components/HelloWorld'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+{{/unless}}
+export default {
+  name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
+  components: {
+    HelloWorld{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
+}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
